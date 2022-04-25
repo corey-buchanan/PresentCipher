@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PresentCipher
-Mon Apr 25 10:45:53 2022
+Mon Apr 25 13:11:34 2022
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,13 +14,13 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "key_update:k_7"
- 10. Port Connectivity Checks: "key_update:k_6"
- 11. Port Connectivity Checks: "key_update:k_5"
- 12. Port Connectivity Checks: "key_update:k_4"
- 13. Port Connectivity Checks: "key_update:k_3"
- 14. Port Connectivity Checks: "key_update:k_2"
- 15. Port Connectivity Checks: "key_update:k_1"
+  9. Port Connectivity Checks: "present_encipher:en|key_scheduler:k|key_update:k_7"
+ 10. Port Connectivity Checks: "present_encipher:en|key_scheduler:k|key_update:k_6"
+ 11. Port Connectivity Checks: "present_encipher:en|key_scheduler:k|key_update:k_5"
+ 12. Port Connectivity Checks: "present_encipher:en|key_scheduler:k|key_update:k_4"
+ 13. Port Connectivity Checks: "present_encipher:en|key_scheduler:k|key_update:k_3"
+ 14. Port Connectivity Checks: "present_encipher:en|key_scheduler:k|key_update:k_2"
+ 15. Port Connectivity Checks: "present_encipher:en|key_scheduler:k|key_update:k_1"
  16. Post-Synthesis Netlist Statistics for Top Partition
  17. Elapsed Time Per Partition
  18. Analysis & Synthesis Messages
@@ -49,14 +49,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Apr 25 10:45:53 2022       ;
+; Analysis & Synthesis Status     ; Successful - Mon Apr 25 13:11:34 2022       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; PresentCipher                               ;
-; Top-level Entity Name           ; key_scheduler                               ;
+; Top-level Entity Name           ; present_cipher                              ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 0                                           ;
-; Total pins                      ; 148                                         ;
+; Total pins                      ; 68                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; key_scheduler      ; PresentCipher      ;
+; Top-level entity name                                                           ; present_cipher     ; PresentCipher      ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -172,65 +172,153 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                  ; Library ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------+---------+
-; sbox.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox.v          ;         ;
-; key_update.v                     ; yes             ; User Verilog HDL File  ; C:/Users/Corey/OneDrive/Desktop/PresentCipher/key_update.v    ;         ;
-; key_scheduler.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Corey/OneDrive/Desktop/PresentCipher/key_scheduler.v ;         ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                   ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
+; sbox_layer.v                     ; yes             ; User Verilog HDL File  ; C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox_layer.v       ;         ;
+; sbox.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox.v             ;         ;
+; pbox.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Corey/OneDrive/Desktop/PresentCipher/pbox.v             ;         ;
+; cipher_round.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Corey/OneDrive/Desktop/PresentCipher/cipher_round.v     ;         ;
+; key_update.v                     ; yes             ; User Verilog HDL File  ; C:/Users/Corey/OneDrive/Desktop/PresentCipher/key_update.v       ;         ;
+; key_scheduler.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Corey/OneDrive/Desktop/PresentCipher/key_scheduler.v    ;         ;
+; present_decipher.v               ; yes             ; User Verilog HDL File  ; C:/Users/Corey/OneDrive/Desktop/PresentCipher/present_decipher.v ;         ;
+; present_encipher.v               ; yes             ; User Verilog HDL File  ; C:/Users/Corey/OneDrive/Desktop/PresentCipher/present_encipher.v ;         ;
+; present_cipher.v                 ; yes             ; User Verilog HDL File  ; C:/Users/Corey/OneDrive/Desktop/PresentCipher/present_cipher.v   ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                       ;
-+---------------------------------------------+---------------------+
-; Resource                                    ; Usage               ;
-+---------------------------------------------+---------------------+
-; Estimate of Logic utilization (ALMs needed) ; 14                  ;
-;                                             ;                     ;
-; Combinational ALUT usage for logic          ; 28                  ;
-;     -- 7 input functions                    ; 0                   ;
-;     -- 6 input functions                    ; 0                   ;
-;     -- 5 input functions                    ; 0                   ;
-;     -- 4 input functions                    ; 28                  ;
-;     -- <=3 input functions                  ; 0                   ;
-;                                             ;                     ;
-; Dedicated logic registers                   ; 0                   ;
-;                                             ;                     ;
-; I/O pins                                    ; 148                 ;
-;                                             ;                     ;
-; Total DSP Blocks                            ; 0                   ;
-;                                             ;                     ;
-; Maximum fan-out node                        ; master_key[8]~input ;
-; Maximum fan-out                             ; 9                   ;
-; Total fan-out                               ; 388                 ;
-; Average fan-out                             ; 1.20                ;
-+---------------------------------------------+---------------------+
++-------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                       ;
++---------------------------------------------+---------------------------------------------------------------------+
+; Resource                                    ; Usage                                                               ;
++---------------------------------------------+---------------------------------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 242                                                                 ;
+;                                             ;                                                                     ;
+; Combinational ALUT usage for logic          ; 396                                                                 ;
+;     -- 7 input functions                    ; 0                                                                   ;
+;     -- 6 input functions                    ; 88                                                                  ;
+;     -- 5 input functions                    ; 4                                                                   ;
+;     -- 4 input functions                    ; 160                                                                 ;
+;     -- <=3 input functions                  ; 144                                                                 ;
+;                                             ;                                                                     ;
+; Dedicated logic registers                   ; 0                                                                   ;
+;                                             ;                                                                     ;
+; I/O pins                                    ; 68                                                                  ;
+;                                             ;                                                                     ;
+; Total DSP Blocks                            ; 0                                                                   ;
+;                                             ;                                                                     ;
+; Maximum fan-out node                        ; present_encipher:en|key_scheduler:k|key_update:k_1|sbox:s|WideOr3~0 ;
+; Maximum fan-out                             ; 20                                                                  ;
+; Total fan-out                               ; 1576                                                                ;
+; Average fan-out                             ; 2.96                                                                ;
++---------------------------------------------+---------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                       ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+---------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                  ; Entity Name   ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+---------------+--------------+
-; |key_scheduler             ; 28 (0)              ; 0 (0)                     ; 0                 ; 0          ; 148  ; 0            ; |key_scheduler                       ; key_scheduler ; work         ;
-;    |key_update:k_1|        ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |key_scheduler|key_update:k_1        ; key_update    ; work         ;
-;       |sbox:s|             ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |key_scheduler|key_update:k_1|sbox:s ; sbox          ; work         ;
-;    |key_update:k_2|        ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |key_scheduler|key_update:k_2        ; key_update    ; work         ;
-;       |sbox:s|             ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |key_scheduler|key_update:k_2|sbox:s ; sbox          ; work         ;
-;    |key_update:k_3|        ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |key_scheduler|key_update:k_3        ; key_update    ; work         ;
-;       |sbox:s|             ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |key_scheduler|key_update:k_3|sbox:s ; sbox          ; work         ;
-;    |key_update:k_4|        ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |key_scheduler|key_update:k_4        ; key_update    ; work         ;
-;       |sbox:s|             ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |key_scheduler|key_update:k_4|sbox:s ; sbox          ; work         ;
-;    |key_update:k_5|        ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |key_scheduler|key_update:k_5        ; key_update    ; work         ;
-;       |sbox:s|             ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |key_scheduler|key_update:k_5|sbox:s ; sbox          ; work         ;
-;    |key_update:k_6|        ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |key_scheduler|key_update:k_6        ; key_update    ; work         ;
-;       |sbox:s|             ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |key_scheduler|key_update:k_6|sbox:s ; sbox          ; work         ;
-;    |key_update:k_7|        ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |key_scheduler|key_update:k_7        ; key_update    ; work         ;
-;       |sbox:s|             ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |key_scheduler|key_update:k_7|sbox:s ; sbox          ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+---------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                               ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                       ; Entity Name      ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------+------------------+--------------+
+; |present_cipher            ; 396 (0)             ; 0 (0)                     ; 0                 ; 0          ; 68   ; 0            ; |present_cipher                                                           ; present_cipher   ; work         ;
+;    |present_decipher:dec|  ; 167 (16)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec                                      ; present_decipher ; work         ;
+;       |cipher_round:r1|    ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r1                      ; cipher_round     ; work         ;
+;          |sbox_layer:s|    ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r1|sbox_layer:s         ; sbox_layer       ; work         ;
+;             |sbox:s1|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r1|sbox_layer:s|sbox:s1 ; sbox             ; work         ;
+;             |sbox:s2|      ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r1|sbox_layer:s|sbox:s2 ; sbox             ; work         ;
+;             |sbox:s3|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r1|sbox_layer:s|sbox:s3 ; sbox             ; work         ;
+;             |sbox:s4|      ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r1|sbox_layer:s|sbox:s4 ; sbox             ; work         ;
+;       |cipher_round:r2|    ; 27 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r2                      ; cipher_round     ; work         ;
+;          |sbox_layer:s|    ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r2|sbox_layer:s         ; sbox_layer       ; work         ;
+;             |sbox:s1|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r2|sbox_layer:s|sbox:s1 ; sbox             ; work         ;
+;             |sbox:s2|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r2|sbox_layer:s|sbox:s2 ; sbox             ; work         ;
+;             |sbox:s3|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r2|sbox_layer:s|sbox:s3 ; sbox             ; work         ;
+;             |sbox:s4|      ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r2|sbox_layer:s|sbox:s4 ; sbox             ; work         ;
+;       |cipher_round:r3|    ; 27 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r3                      ; cipher_round     ; work         ;
+;          |sbox_layer:s|    ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r3|sbox_layer:s         ; sbox_layer       ; work         ;
+;             |sbox:s1|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r3|sbox_layer:s|sbox:s1 ; sbox             ; work         ;
+;             |sbox:s2|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r3|sbox_layer:s|sbox:s2 ; sbox             ; work         ;
+;             |sbox:s3|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r3|sbox_layer:s|sbox:s3 ; sbox             ; work         ;
+;             |sbox:s4|      ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r3|sbox_layer:s|sbox:s4 ; sbox             ; work         ;
+;       |cipher_round:r4|    ; 26 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r4                      ; cipher_round     ; work         ;
+;          |sbox_layer:s|    ; 10 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r4|sbox_layer:s         ; sbox_layer       ; work         ;
+;             |sbox:s1|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r4|sbox_layer:s|sbox:s1 ; sbox             ; work         ;
+;             |sbox:s2|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r4|sbox_layer:s|sbox:s2 ; sbox             ; work         ;
+;             |sbox:s3|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r4|sbox_layer:s|sbox:s3 ; sbox             ; work         ;
+;             |sbox:s4|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r4|sbox_layer:s|sbox:s4 ; sbox             ; work         ;
+;       |cipher_round:r5|    ; 24 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r5                      ; cipher_round     ; work         ;
+;          |sbox_layer:s|    ; 8 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r5|sbox_layer:s         ; sbox_layer       ; work         ;
+;             |sbox:s1|      ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r5|sbox_layer:s|sbox:s1 ; sbox             ; work         ;
+;             |sbox:s2|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r5|sbox_layer:s|sbox:s2 ; sbox             ; work         ;
+;             |sbox:s3|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r5|sbox_layer:s|sbox:s3 ; sbox             ; work         ;
+;             |sbox:s4|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r5|sbox_layer:s|sbox:s4 ; sbox             ; work         ;
+;       |cipher_round:r6|    ; 23 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r6                      ; cipher_round     ; work         ;
+;          |sbox_layer:s|    ; 8 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r6|sbox_layer:s         ; sbox_layer       ; work         ;
+;             |sbox:s1|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r6|sbox_layer:s|sbox:s1 ; sbox             ; work         ;
+;             |sbox:s2|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r6|sbox_layer:s|sbox:s2 ; sbox             ; work         ;
+;             |sbox:s3|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r6|sbox_layer:s|sbox:s3 ; sbox             ; work         ;
+;             |sbox:s4|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r6|sbox_layer:s|sbox:s4 ; sbox             ; work         ;
+;       |cipher_round:r7|    ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_decipher:dec|cipher_round:r7                      ; cipher_round     ; work         ;
+;    |present_encipher:en|   ; 229 (16)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en                                       ; present_encipher ; work         ;
+;       |cipher_round:r1|    ; 24 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r1                       ; cipher_round     ; work         ;
+;          |sbox_layer:s|    ; 8 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r1|sbox_layer:s          ; sbox_layer       ; work         ;
+;             |sbox:s1|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r1|sbox_layer:s|sbox:s1  ; sbox             ; work         ;
+;             |sbox:s2|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r1|sbox_layer:s|sbox:s2  ; sbox             ; work         ;
+;             |sbox:s3|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r1|sbox_layer:s|sbox:s3  ; sbox             ; work         ;
+;             |sbox:s4|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r1|sbox_layer:s|sbox:s4  ; sbox             ; work         ;
+;       |cipher_round:r2|    ; 25 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r2                       ; cipher_round     ; work         ;
+;          |sbox_layer:s|    ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r2|sbox_layer:s          ; sbox_layer       ; work         ;
+;             |sbox:s1|      ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r2|sbox_layer:s|sbox:s1  ; sbox             ; work         ;
+;             |sbox:s2|      ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r2|sbox_layer:s|sbox:s2  ; sbox             ; work         ;
+;             |sbox:s3|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r2|sbox_layer:s|sbox:s3  ; sbox             ; work         ;
+;             |sbox:s4|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r2|sbox_layer:s|sbox:s4  ; sbox             ; work         ;
+;       |cipher_round:r3|    ; 26 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r3                       ; cipher_round     ; work         ;
+;          |sbox_layer:s|    ; 10 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r3|sbox_layer:s          ; sbox_layer       ; work         ;
+;             |sbox:s1|      ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r3|sbox_layer:s|sbox:s1  ; sbox             ; work         ;
+;             |sbox:s2|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r3|sbox_layer:s|sbox:s2  ; sbox             ; work         ;
+;             |sbox:s3|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r3|sbox_layer:s|sbox:s3  ; sbox             ; work         ;
+;             |sbox:s4|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r3|sbox_layer:s|sbox:s4  ; sbox             ; work         ;
+;       |cipher_round:r4|    ; 27 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r4                       ; cipher_round     ; work         ;
+;          |sbox_layer:s|    ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r4|sbox_layer:s          ; sbox_layer       ; work         ;
+;             |sbox:s1|      ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r4|sbox_layer:s|sbox:s1  ; sbox             ; work         ;
+;             |sbox:s2|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r4|sbox_layer:s|sbox:s2  ; sbox             ; work         ;
+;             |sbox:s3|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r4|sbox_layer:s|sbox:s3  ; sbox             ; work         ;
+;             |sbox:s4|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r4|sbox_layer:s|sbox:s4  ; sbox             ; work         ;
+;       |cipher_round:r5|    ; 28 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r5                       ; cipher_round     ; work         ;
+;          |sbox_layer:s|    ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r5|sbox_layer:s          ; sbox_layer       ; work         ;
+;             |sbox:s1|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r5|sbox_layer:s|sbox:s1  ; sbox             ; work         ;
+;             |sbox:s2|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r5|sbox_layer:s|sbox:s2  ; sbox             ; work         ;
+;             |sbox:s3|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r5|sbox_layer:s|sbox:s3  ; sbox             ; work         ;
+;             |sbox:s4|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r5|sbox_layer:s|sbox:s4  ; sbox             ; work         ;
+;       |cipher_round:r6|    ; 23 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r6                       ; cipher_round     ; work         ;
+;          |sbox_layer:s|    ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r6|sbox_layer:s          ; sbox_layer       ; work         ;
+;             |sbox:s1|      ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r6|sbox_layer:s|sbox:s1  ; sbox             ; work         ;
+;             |sbox:s2|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r6|sbox_layer:s|sbox:s2  ; sbox             ; work         ;
+;             |sbox:s3|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r6|sbox_layer:s|sbox:s3  ; sbox             ; work         ;
+;             |sbox:s4|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r6|sbox_layer:s|sbox:s4  ; sbox             ; work         ;
+;       |cipher_round:r7|    ; 32 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r7                       ; cipher_round     ; work         ;
+;          |sbox_layer:s|    ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r7|sbox_layer:s          ; sbox_layer       ; work         ;
+;             |sbox:s1|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r7|sbox_layer:s|sbox:s1  ; sbox             ; work         ;
+;             |sbox:s2|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r7|sbox_layer:s|sbox:s2  ; sbox             ; work         ;
+;             |sbox:s3|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r7|sbox_layer:s|sbox:s3  ; sbox             ; work         ;
+;             |sbox:s4|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|cipher_round:r7|sbox_layer:s|sbox:s4  ; sbox             ; work         ;
+;       |key_scheduler:k|    ; 28 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|key_scheduler:k                       ; key_scheduler    ; work         ;
+;          |key_update:k_1|  ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|key_scheduler:k|key_update:k_1        ; key_update       ; work         ;
+;             |sbox:s|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|key_scheduler:k|key_update:k_1|sbox:s ; sbox             ; work         ;
+;          |key_update:k_2|  ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|key_scheduler:k|key_update:k_2        ; key_update       ; work         ;
+;             |sbox:s|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|key_scheduler:k|key_update:k_2|sbox:s ; sbox             ; work         ;
+;          |key_update:k_3|  ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|key_scheduler:k|key_update:k_3        ; key_update       ; work         ;
+;             |sbox:s|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|key_scheduler:k|key_update:k_3|sbox:s ; sbox             ; work         ;
+;          |key_update:k_4|  ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|key_scheduler:k|key_update:k_4        ; key_update       ; work         ;
+;             |sbox:s|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|key_scheduler:k|key_update:k_4|sbox:s ; sbox             ; work         ;
+;          |key_update:k_5|  ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|key_scheduler:k|key_update:k_5        ; key_update       ; work         ;
+;             |sbox:s|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|key_scheduler:k|key_update:k_5|sbox:s ; sbox             ; work         ;
+;          |key_update:k_6|  ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|key_scheduler:k|key_update:k_6        ; key_update       ; work         ;
+;             |sbox:s|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|key_scheduler:k|key_update:k_6|sbox:s ; sbox             ; work         ;
+;          |key_update:k_7|  ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|key_scheduler:k|key_update:k_7        ; key_update       ; work         ;
+;             |sbox:s|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |present_cipher|present_encipher:en|key_scheduler:k|key_update:k_7|sbox:s ; sbox             ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -250,7 +338,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "key_update:k_7"                                                                                   ;
+; Port Connectivity Checks: "present_encipher:en|key_scheduler:k|key_update:k_7"                                               ;
 +--------------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port               ; Type   ; Severity ; Details                                                                             ;
 +--------------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -259,58 +347,58 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "key_update:k_6"        ;
-+-----------------+-------+----------+--------------+
-; Port            ; Type  ; Severity ; Details      ;
-+-----------------+-------+----------+--------------+
-; round_count_lsb ; Input ; Info     ; Stuck at GND ;
-+-----------------+-------+----------+--------------+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "present_encipher:en|key_scheduler:k|key_update:k_6" ;
++-----------------+-------+----------+-------------------------------------------+
+; Port            ; Type  ; Severity ; Details                                   ;
++-----------------+-------+----------+-------------------------------------------+
+; round_count_lsb ; Input ; Info     ; Stuck at GND                              ;
++-----------------+-------+----------+-------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "key_update:k_5"        ;
-+-----------------+-------+----------+--------------+
-; Port            ; Type  ; Severity ; Details      ;
-+-----------------+-------+----------+--------------+
-; round_count_lsb ; Input ; Info     ; Stuck at VCC ;
-+-----------------+-------+----------+--------------+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "present_encipher:en|key_scheduler:k|key_update:k_5" ;
++-----------------+-------+----------+-------------------------------------------+
+; Port            ; Type  ; Severity ; Details                                   ;
++-----------------+-------+----------+-------------------------------------------+
+; round_count_lsb ; Input ; Info     ; Stuck at VCC                              ;
++-----------------+-------+----------+-------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "key_update:k_4"        ;
-+-----------------+-------+----------+--------------+
-; Port            ; Type  ; Severity ; Details      ;
-+-----------------+-------+----------+--------------+
-; round_count_lsb ; Input ; Info     ; Stuck at GND ;
-+-----------------+-------+----------+--------------+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "present_encipher:en|key_scheduler:k|key_update:k_4" ;
++-----------------+-------+----------+-------------------------------------------+
+; Port            ; Type  ; Severity ; Details                                   ;
++-----------------+-------+----------+-------------------------------------------+
+; round_count_lsb ; Input ; Info     ; Stuck at GND                              ;
++-----------------+-------+----------+-------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "key_update:k_3"        ;
-+-----------------+-------+----------+--------------+
-; Port            ; Type  ; Severity ; Details      ;
-+-----------------+-------+----------+--------------+
-; round_count_lsb ; Input ; Info     ; Stuck at VCC ;
-+-----------------+-------+----------+--------------+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "present_encipher:en|key_scheduler:k|key_update:k_3" ;
++-----------------+-------+----------+-------------------------------------------+
+; Port            ; Type  ; Severity ; Details                                   ;
++-----------------+-------+----------+-------------------------------------------+
+; round_count_lsb ; Input ; Info     ; Stuck at VCC                              ;
++-----------------+-------+----------+-------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "key_update:k_2"        ;
-+-----------------+-------+----------+--------------+
-; Port            ; Type  ; Severity ; Details      ;
-+-----------------+-------+----------+--------------+
-; round_count_lsb ; Input ; Info     ; Stuck at GND ;
-+-----------------+-------+----------+--------------+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "present_encipher:en|key_scheduler:k|key_update:k_2" ;
++-----------------+-------+----------+-------------------------------------------+
+; Port            ; Type  ; Severity ; Details                                   ;
++-----------------+-------+----------+-------------------------------------------+
+; round_count_lsb ; Input ; Info     ; Stuck at GND                              ;
++-----------------+-------+----------+-------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "key_update:k_1"        ;
-+-----------------+-------+----------+--------------+
-; Port            ; Type  ; Severity ; Details      ;
-+-----------------+-------+----------+--------------+
-; round_count_lsb ; Input ; Info     ; Stuck at VCC ;
-+-----------------+-------+----------+--------------+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "present_encipher:en|key_scheduler:k|key_update:k_1" ;
++-----------------+-------+----------+-------------------------------------------+
+; Port            ; Type  ; Severity ; Details                                   ;
++-----------------+-------+----------+-------------------------------------------+
+; round_count_lsb ; Input ; Info     ; Stuck at VCC                              ;
++-----------------+-------+----------+-------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -318,14 +406,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 51                          ;
-;     normal            ; 51                          ;
-;         1 data inputs ; 23                          ;
-;         4 data inputs ; 28                          ;
-; boundary_port         ; 148                         ;
+; arriav_lcell_comb     ; 413                         ;
+;     normal            ; 413                         ;
+;         1 data inputs ; 17                          ;
+;         2 data inputs ; 144                         ;
+;         4 data inputs ; 160                         ;
+;         5 data inputs ; 4                           ;
+;         6 data inputs ; 88                          ;
+; boundary_port         ; 68                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.54                        ;
+; Max LUT depth         ; 28.00                       ;
+; Average LUT depth     ; 26.47                       ;
 +-----------------------+-----------------------------+
 
 
@@ -334,7 +425,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -344,7 +435,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Apr 25 10:45:38 2022
+    Info: Processing started: Mon Apr 25 13:11:17 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PresentCipher -c PresentCipher
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -356,33 +447,45 @@ Info (12021): Found 1 design units, including 1 entities, in source file sbox.v
     Info (12023): Found entity 1: sbox File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pbox.v
     Info (12023): Found entity 1: pbox File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/pbox.v Line: 1
-Info (12021): Found 0 design units, including 0 entities, in source file cipher_round.v
+Info (12021): Found 1 design units, including 1 entities, in source file cipher_round.v
+    Info (12023): Found entity 1: cipher_round File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/cipher_round.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file key_update.v
     Info (12023): Found entity 1: key_update File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/key_update.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file key_scheduler.v
     Info (12023): Found entity 1: key_scheduler File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/key_scheduler.v Line: 1
-Info (12021): Found 0 design units, including 0 entities, in source file present_decipher.v
-Info (12021): Found 0 design units, including 0 entities, in source file present_encipher.v
+Info (12021): Found 1 design units, including 1 entities, in source file present_decipher.v
+    Info (12023): Found entity 1: present_decipher File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/present_decipher.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file present_encipher.v
+    Info (12023): Found entity 1: present_encipher File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/present_encipher.v Line: 1
 Info (12021): Found 0 design units, including 0 entities, in source file blockchain_encipher.v
 Info (12021): Found 0 design units, including 0 entities, in source file blockchain_decipher.v
 Info (12021): Found 0 design units, including 0 entities, in source file tb_blockchain.v
-Info (12021): Found 0 design units, including 0 entities, in source file tb_cipher.v
+Info (12021): Found 1 design units, including 1 entities, in source file tb_cipher.v
+    Info (12023): Found entity 1: tb_cipher File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/tb_cipher.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file tb_key_scheduler.v
     Info (12023): Found entity 1: tb_key_scheduler File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/tb_key_scheduler.v Line: 3
-Info (12127): Elaborating entity "key_scheduler" for the top level hierarchy
-Info (12128): Elaborating entity "key_update" for hierarchy "key_update:k_1" File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/key_scheduler.v Line: 8
-Info (12128): Elaborating entity "sbox" for hierarchy "key_update:k_1|sbox:s" File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/key_update.v Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file present_cipher.v
+    Info (12023): Found entity 1: present_cipher File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/present_cipher.v Line: 1
+Info (12127): Elaborating entity "present_cipher" for the top level hierarchy
+Info (12128): Elaborating entity "present_encipher" for hierarchy "present_encipher:en" File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/present_cipher.v Line: 8
+Info (12128): Elaborating entity "key_scheduler" for hierarchy "present_encipher:en|key_scheduler:k" File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/present_encipher.v Line: 10
+Info (12128): Elaborating entity "key_update" for hierarchy "present_encipher:en|key_scheduler:k|key_update:k_1" File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/key_scheduler.v Line: 8
+Info (12128): Elaborating entity "sbox" for hierarchy "present_encipher:en|key_scheduler:k|key_update:k_1|sbox:s" File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/key_update.v Line: 12
+Info (12128): Elaborating entity "cipher_round" for hierarchy "present_encipher:en|cipher_round:r1" File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/present_encipher.v Line: 12
+Info (12128): Elaborating entity "sbox_layer" for hierarchy "present_encipher:en|cipher_round:r1|sbox_layer:s" File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/cipher_round.v Line: 11
+Info (12128): Elaborating entity "pbox" for hierarchy "present_encipher:en|cipher_round:r1|pbox:p" File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/cipher_round.v Line: 12
+Info (12128): Elaborating entity "present_decipher" for hierarchy "present_decipher:dec" File: C:/Users/Corey/OneDrive/Desktop/PresentCipher/present_cipher.v Line: 9
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 176 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 20 input pins
-    Info (21059): Implemented 128 output pins
-    Info (21061): Implemented 28 logic cells
+Info (21057): Implemented 464 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 36 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 396 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4797 megabytes
-    Info: Processing ended: Mon Apr 25 10:45:53 2022
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:30
+    Info: Peak virtual memory: 4801 megabytes
+    Info: Processing ended: Mon Apr 25 13:11:34 2022
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:34
 
 

@@ -7,8 +7,7 @@ reg [19:0] master_key;
 
 wire [15:0] ciphertext, deciphered_text;
 
-present_encipher uut1(plaintext, master_key, ciphertext);
-present_decipher uut2(ciphertext, master_key, deciphered_text);
+present_cipher uut(plaintext, master_key, ciphertext, deciphered_text);
 
 initial begin
 
