@@ -9,19 +9,19 @@ module present_encipher(ptext, master_key, ctext); //input key, instantiate key_
 
 	key_scheduler k(.master_key(master_key), .k0(k0), .k1(k1), .k2(k2), .k3(k3), .k4(k4), .k5(k5), .k6(k6), .k7(k7));
 	
-	cipher_round r1 (.round_in(ptext), .round_key(k0), .round_out(r1_r2));
+	cipher_round c1 (.round_in(ptext), .round_key(k0), .round_out(r1_r2));
 	
-	cipher_round r2 (.round_in(r1_r2), .round_key(k1), .round_out(r2_r3));
+	cipher_round c2 (.round_in(r1_r2), .round_key(k1), .round_out(r2_r3));
 	
-	cipher_round r3 (.round_in(r2_r3), .round_key(k2), .round_out(r3_r4));
+	cipher_round c3 (.round_in(r2_r3), .round_key(k2), .round_out(r3_r4));
 	
-	cipher_round r4 (.round_in(r3_r4), .round_key(k3), .round_out(r4_r5));
+	cipher_round c4 (.round_in(r3_r4), .round_key(k3), .round_out(r4_r5));
 	
-	cipher_round r5 (.round_in(r4_r5), .round_key(k4), .round_out(r5_r6));
+	cipher_round c5 (.round_in(r4_r5), .round_key(k4), .round_out(r5_r6));
 	
-	cipher_round r6 (.round_in(r5_r6), .round_key(k5), .round_out(r6_r7));
+	cipher_round c6 (.round_in(r5_r6), .round_key(k5), .round_out(r6_r7));
 	
-	cipher_round r7 (.round_in(r6_r7), .round_key(k6), .round_out(r7_out));
+	cipher_round c7 (.round_in(r6_r7), .round_key(k6), .round_out(r7_out));
 	
 	assign ctext = r7_out ^ k7;
 	
