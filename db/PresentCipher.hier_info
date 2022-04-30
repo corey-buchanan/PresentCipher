@@ -35,38 +35,38 @@ master_key[16] => master_key[16].IN2
 master_key[17] => master_key[17].IN2
 master_key[18] => master_key[18].IN2
 master_key[19] => master_key[19].IN2
-ciphertext[0] <= ciphertext[0].DB_MAX_OUTPUT_PORT_TYPE
-ciphertext[1] <= ciphertext[1].DB_MAX_OUTPUT_PORT_TYPE
-ciphertext[2] <= ciphertext[2].DB_MAX_OUTPUT_PORT_TYPE
-ciphertext[3] <= ciphertext[3].DB_MAX_OUTPUT_PORT_TYPE
-ciphertext[4] <= ciphertext[4].DB_MAX_OUTPUT_PORT_TYPE
-ciphertext[5] <= ciphertext[5].DB_MAX_OUTPUT_PORT_TYPE
-ciphertext[6] <= ciphertext[6].DB_MAX_OUTPUT_PORT_TYPE
-ciphertext[7] <= ciphertext[7].DB_MAX_OUTPUT_PORT_TYPE
-ciphertext[8] <= ciphertext[8].DB_MAX_OUTPUT_PORT_TYPE
-ciphertext[9] <= ciphertext[9].DB_MAX_OUTPUT_PORT_TYPE
-ciphertext[10] <= ciphertext[10].DB_MAX_OUTPUT_PORT_TYPE
-ciphertext[11] <= ciphertext[11].DB_MAX_OUTPUT_PORT_TYPE
-ciphertext[12] <= ciphertext[12].DB_MAX_OUTPUT_PORT_TYPE
-ciphertext[13] <= ciphertext[13].DB_MAX_OUTPUT_PORT_TYPE
-ciphertext[14] <= ciphertext[14].DB_MAX_OUTPUT_PORT_TYPE
-ciphertext[15] <= ciphertext[15].DB_MAX_OUTPUT_PORT_TYPE
-deciphered_text[0] <= present_decipher:dec.port2
-deciphered_text[1] <= present_decipher:dec.port2
-deciphered_text[2] <= present_decipher:dec.port2
-deciphered_text[3] <= present_decipher:dec.port2
-deciphered_text[4] <= present_decipher:dec.port2
-deciphered_text[5] <= present_decipher:dec.port2
-deciphered_text[6] <= present_decipher:dec.port2
-deciphered_text[7] <= present_decipher:dec.port2
-deciphered_text[8] <= present_decipher:dec.port2
-deciphered_text[9] <= present_decipher:dec.port2
-deciphered_text[10] <= present_decipher:dec.port2
-deciphered_text[11] <= present_decipher:dec.port2
-deciphered_text[12] <= present_decipher:dec.port2
-deciphered_text[13] <= present_decipher:dec.port2
-deciphered_text[14] <= present_decipher:dec.port2
-deciphered_text[15] <= present_decipher:dec.port2
+ciphertext[0] << ciphertext[0].DB_MAX_OUTPUT_PORT_TYPE
+ciphertext[1] << ciphertext[1].DB_MAX_OUTPUT_PORT_TYPE
+ciphertext[2] << ciphertext[2].DB_MAX_OUTPUT_PORT_TYPE
+ciphertext[3] << ciphertext[3].DB_MAX_OUTPUT_PORT_TYPE
+ciphertext[4] << ciphertext[4].DB_MAX_OUTPUT_PORT_TYPE
+ciphertext[5] << ciphertext[5].DB_MAX_OUTPUT_PORT_TYPE
+ciphertext[6] << ciphertext[6].DB_MAX_OUTPUT_PORT_TYPE
+ciphertext[7] << ciphertext[7].DB_MAX_OUTPUT_PORT_TYPE
+ciphertext[8] << ciphertext[8].DB_MAX_OUTPUT_PORT_TYPE
+ciphertext[9] << ciphertext[9].DB_MAX_OUTPUT_PORT_TYPE
+ciphertext[10] << ciphertext[10].DB_MAX_OUTPUT_PORT_TYPE
+ciphertext[11] << ciphertext[11].DB_MAX_OUTPUT_PORT_TYPE
+ciphertext[12] << ciphertext[12].DB_MAX_OUTPUT_PORT_TYPE
+ciphertext[13] << ciphertext[13].DB_MAX_OUTPUT_PORT_TYPE
+ciphertext[14] << ciphertext[14].DB_MAX_OUTPUT_PORT_TYPE
+ciphertext[15] << ciphertext[15].DB_MAX_OUTPUT_PORT_TYPE
+deciphered_text[0] << present_decipher:dec.port2
+deciphered_text[1] << present_decipher:dec.port2
+deciphered_text[2] << present_decipher:dec.port2
+deciphered_text[3] << present_decipher:dec.port2
+deciphered_text[4] << present_decipher:dec.port2
+deciphered_text[5] << present_decipher:dec.port2
+deciphered_text[6] << present_decipher:dec.port2
+deciphered_text[7] << present_decipher:dec.port2
+deciphered_text[8] << present_decipher:dec.port2
+deciphered_text[9] << present_decipher:dec.port2
+deciphered_text[10] << present_decipher:dec.port2
+deciphered_text[11] << present_decipher:dec.port2
+deciphered_text[12] << present_decipher:dec.port2
+deciphered_text[13] << present_decipher:dec.port2
+deciphered_text[14] << present_decipher:dec.port2
+deciphered_text[15] << present_decipher:dec.port2
 
 
 |present_cipher|present_encipher:en
@@ -681,7 +681,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r1
+|present_cipher|present_encipher:en|cipher_round:c1
 round_in[0] => r_in.IN0
 round_in[1] => r_in.IN0
 round_in[2] => r_in.IN0
@@ -732,7 +732,7 @@ round_out[14] <= pbox:p.state_out
 round_out[15] <= pbox:p.state_out
 
 
-|present_cipher|present_encipher:en|cipher_round:r1|sbox_layer:s
+|present_cipher|present_encipher:en|cipher_round:c1|sbox_layer:s
 state_in[0] => w0[0].IN1
 state_in[1] => w0[1].IN1
 state_in[2] => w0[2].IN1
@@ -767,7 +767,7 @@ state_out[14] <= sbox:s4.w_out
 state_out[15] <= sbox:s4.w_out
 
 
-|present_cipher|present_encipher:en|cipher_round:r1|sbox_layer:s|sbox:s1
+|present_cipher|present_encipher:en|cipher_round:c1|sbox_layer:s|sbox:s1
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -778,7 +778,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r1|sbox_layer:s|sbox:s2
+|present_cipher|present_encipher:en|cipher_round:c1|sbox_layer:s|sbox:s2
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -789,7 +789,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r1|sbox_layer:s|sbox:s3
+|present_cipher|present_encipher:en|cipher_round:c1|sbox_layer:s|sbox:s3
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -800,7 +800,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r1|sbox_layer:s|sbox:s4
+|present_cipher|present_encipher:en|cipher_round:c1|sbox_layer:s|sbox:s4
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -811,7 +811,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r1|pbox:p
+|present_cipher|present_encipher:en|cipher_round:c1|pbox:p
 state_in[0] => state_out[0].DATAIN
 state_in[1] => state_out[4].DATAIN
 state_in[2] => state_out[8].DATAIN
@@ -846,7 +846,7 @@ state_out[14] <= state_in[11].DB_MAX_OUTPUT_PORT_TYPE
 state_out[15] <= state_in[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r2
+|present_cipher|present_encipher:en|cipher_round:c2
 round_in[0] => r_in.IN0
 round_in[1] => r_in.IN0
 round_in[2] => r_in.IN0
@@ -897,7 +897,7 @@ round_out[14] <= pbox:p.state_out
 round_out[15] <= pbox:p.state_out
 
 
-|present_cipher|present_encipher:en|cipher_round:r2|sbox_layer:s
+|present_cipher|present_encipher:en|cipher_round:c2|sbox_layer:s
 state_in[0] => w0[0].IN1
 state_in[1] => w0[1].IN1
 state_in[2] => w0[2].IN1
@@ -932,7 +932,7 @@ state_out[14] <= sbox:s4.w_out
 state_out[15] <= sbox:s4.w_out
 
 
-|present_cipher|present_encipher:en|cipher_round:r2|sbox_layer:s|sbox:s1
+|present_cipher|present_encipher:en|cipher_round:c2|sbox_layer:s|sbox:s1
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -943,7 +943,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r2|sbox_layer:s|sbox:s2
+|present_cipher|present_encipher:en|cipher_round:c2|sbox_layer:s|sbox:s2
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -954,7 +954,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r2|sbox_layer:s|sbox:s3
+|present_cipher|present_encipher:en|cipher_round:c2|sbox_layer:s|sbox:s3
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -965,7 +965,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r2|sbox_layer:s|sbox:s4
+|present_cipher|present_encipher:en|cipher_round:c2|sbox_layer:s|sbox:s4
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -976,7 +976,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r2|pbox:p
+|present_cipher|present_encipher:en|cipher_round:c2|pbox:p
 state_in[0] => state_out[0].DATAIN
 state_in[1] => state_out[4].DATAIN
 state_in[2] => state_out[8].DATAIN
@@ -1011,7 +1011,7 @@ state_out[14] <= state_in[11].DB_MAX_OUTPUT_PORT_TYPE
 state_out[15] <= state_in[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r3
+|present_cipher|present_encipher:en|cipher_round:c3
 round_in[0] => r_in.IN0
 round_in[1] => r_in.IN0
 round_in[2] => r_in.IN0
@@ -1062,7 +1062,7 @@ round_out[14] <= pbox:p.state_out
 round_out[15] <= pbox:p.state_out
 
 
-|present_cipher|present_encipher:en|cipher_round:r3|sbox_layer:s
+|present_cipher|present_encipher:en|cipher_round:c3|sbox_layer:s
 state_in[0] => w0[0].IN1
 state_in[1] => w0[1].IN1
 state_in[2] => w0[2].IN1
@@ -1097,7 +1097,7 @@ state_out[14] <= sbox:s4.w_out
 state_out[15] <= sbox:s4.w_out
 
 
-|present_cipher|present_encipher:en|cipher_round:r3|sbox_layer:s|sbox:s1
+|present_cipher|present_encipher:en|cipher_round:c3|sbox_layer:s|sbox:s1
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1108,7 +1108,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r3|sbox_layer:s|sbox:s2
+|present_cipher|present_encipher:en|cipher_round:c3|sbox_layer:s|sbox:s2
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1119,7 +1119,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r3|sbox_layer:s|sbox:s3
+|present_cipher|present_encipher:en|cipher_round:c3|sbox_layer:s|sbox:s3
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1130,7 +1130,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r3|sbox_layer:s|sbox:s4
+|present_cipher|present_encipher:en|cipher_round:c3|sbox_layer:s|sbox:s4
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1141,7 +1141,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r3|pbox:p
+|present_cipher|present_encipher:en|cipher_round:c3|pbox:p
 state_in[0] => state_out[0].DATAIN
 state_in[1] => state_out[4].DATAIN
 state_in[2] => state_out[8].DATAIN
@@ -1176,7 +1176,7 @@ state_out[14] <= state_in[11].DB_MAX_OUTPUT_PORT_TYPE
 state_out[15] <= state_in[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r4
+|present_cipher|present_encipher:en|cipher_round:c4
 round_in[0] => r_in.IN0
 round_in[1] => r_in.IN0
 round_in[2] => r_in.IN0
@@ -1227,7 +1227,7 @@ round_out[14] <= pbox:p.state_out
 round_out[15] <= pbox:p.state_out
 
 
-|present_cipher|present_encipher:en|cipher_round:r4|sbox_layer:s
+|present_cipher|present_encipher:en|cipher_round:c4|sbox_layer:s
 state_in[0] => w0[0].IN1
 state_in[1] => w0[1].IN1
 state_in[2] => w0[2].IN1
@@ -1262,7 +1262,7 @@ state_out[14] <= sbox:s4.w_out
 state_out[15] <= sbox:s4.w_out
 
 
-|present_cipher|present_encipher:en|cipher_round:r4|sbox_layer:s|sbox:s1
+|present_cipher|present_encipher:en|cipher_round:c4|sbox_layer:s|sbox:s1
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1273,7 +1273,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r4|sbox_layer:s|sbox:s2
+|present_cipher|present_encipher:en|cipher_round:c4|sbox_layer:s|sbox:s2
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1284,7 +1284,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r4|sbox_layer:s|sbox:s3
+|present_cipher|present_encipher:en|cipher_round:c4|sbox_layer:s|sbox:s3
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1295,7 +1295,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r4|sbox_layer:s|sbox:s4
+|present_cipher|present_encipher:en|cipher_round:c4|sbox_layer:s|sbox:s4
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1306,7 +1306,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r4|pbox:p
+|present_cipher|present_encipher:en|cipher_round:c4|pbox:p
 state_in[0] => state_out[0].DATAIN
 state_in[1] => state_out[4].DATAIN
 state_in[2] => state_out[8].DATAIN
@@ -1341,7 +1341,7 @@ state_out[14] <= state_in[11].DB_MAX_OUTPUT_PORT_TYPE
 state_out[15] <= state_in[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r5
+|present_cipher|present_encipher:en|cipher_round:c5
 round_in[0] => r_in.IN0
 round_in[1] => r_in.IN0
 round_in[2] => r_in.IN0
@@ -1392,7 +1392,7 @@ round_out[14] <= pbox:p.state_out
 round_out[15] <= pbox:p.state_out
 
 
-|present_cipher|present_encipher:en|cipher_round:r5|sbox_layer:s
+|present_cipher|present_encipher:en|cipher_round:c5|sbox_layer:s
 state_in[0] => w0[0].IN1
 state_in[1] => w0[1].IN1
 state_in[2] => w0[2].IN1
@@ -1427,7 +1427,7 @@ state_out[14] <= sbox:s4.w_out
 state_out[15] <= sbox:s4.w_out
 
 
-|present_cipher|present_encipher:en|cipher_round:r5|sbox_layer:s|sbox:s1
+|present_cipher|present_encipher:en|cipher_round:c5|sbox_layer:s|sbox:s1
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1438,7 +1438,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r5|sbox_layer:s|sbox:s2
+|present_cipher|present_encipher:en|cipher_round:c5|sbox_layer:s|sbox:s2
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1449,7 +1449,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r5|sbox_layer:s|sbox:s3
+|present_cipher|present_encipher:en|cipher_round:c5|sbox_layer:s|sbox:s3
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1460,7 +1460,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r5|sbox_layer:s|sbox:s4
+|present_cipher|present_encipher:en|cipher_round:c5|sbox_layer:s|sbox:s4
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1471,7 +1471,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r5|pbox:p
+|present_cipher|present_encipher:en|cipher_round:c5|pbox:p
 state_in[0] => state_out[0].DATAIN
 state_in[1] => state_out[4].DATAIN
 state_in[2] => state_out[8].DATAIN
@@ -1506,7 +1506,7 @@ state_out[14] <= state_in[11].DB_MAX_OUTPUT_PORT_TYPE
 state_out[15] <= state_in[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r6
+|present_cipher|present_encipher:en|cipher_round:c6
 round_in[0] => r_in.IN0
 round_in[1] => r_in.IN0
 round_in[2] => r_in.IN0
@@ -1557,7 +1557,7 @@ round_out[14] <= pbox:p.state_out
 round_out[15] <= pbox:p.state_out
 
 
-|present_cipher|present_encipher:en|cipher_round:r6|sbox_layer:s
+|present_cipher|present_encipher:en|cipher_round:c6|sbox_layer:s
 state_in[0] => w0[0].IN1
 state_in[1] => w0[1].IN1
 state_in[2] => w0[2].IN1
@@ -1592,7 +1592,7 @@ state_out[14] <= sbox:s4.w_out
 state_out[15] <= sbox:s4.w_out
 
 
-|present_cipher|present_encipher:en|cipher_round:r6|sbox_layer:s|sbox:s1
+|present_cipher|present_encipher:en|cipher_round:c6|sbox_layer:s|sbox:s1
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1603,7 +1603,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r6|sbox_layer:s|sbox:s2
+|present_cipher|present_encipher:en|cipher_round:c6|sbox_layer:s|sbox:s2
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1614,7 +1614,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r6|sbox_layer:s|sbox:s3
+|present_cipher|present_encipher:en|cipher_round:c6|sbox_layer:s|sbox:s3
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1625,7 +1625,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r6|sbox_layer:s|sbox:s4
+|present_cipher|present_encipher:en|cipher_round:c6|sbox_layer:s|sbox:s4
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1636,7 +1636,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r6|pbox:p
+|present_cipher|present_encipher:en|cipher_round:c6|pbox:p
 state_in[0] => state_out[0].DATAIN
 state_in[1] => state_out[4].DATAIN
 state_in[2] => state_out[8].DATAIN
@@ -1671,7 +1671,7 @@ state_out[14] <= state_in[11].DB_MAX_OUTPUT_PORT_TYPE
 state_out[15] <= state_in[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r7
+|present_cipher|present_encipher:en|cipher_round:c7
 round_in[0] => r_in.IN0
 round_in[1] => r_in.IN0
 round_in[2] => r_in.IN0
@@ -1722,7 +1722,7 @@ round_out[14] <= pbox:p.state_out
 round_out[15] <= pbox:p.state_out
 
 
-|present_cipher|present_encipher:en|cipher_round:r7|sbox_layer:s
+|present_cipher|present_encipher:en|cipher_round:c7|sbox_layer:s
 state_in[0] => w0[0].IN1
 state_in[1] => w0[1].IN1
 state_in[2] => w0[2].IN1
@@ -1757,7 +1757,7 @@ state_out[14] <= sbox:s4.w_out
 state_out[15] <= sbox:s4.w_out
 
 
-|present_cipher|present_encipher:en|cipher_round:r7|sbox_layer:s|sbox:s1
+|present_cipher|present_encipher:en|cipher_round:c7|sbox_layer:s|sbox:s1
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1768,7 +1768,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r7|sbox_layer:s|sbox:s2
+|present_cipher|present_encipher:en|cipher_round:c7|sbox_layer:s|sbox:s2
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1779,7 +1779,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r7|sbox_layer:s|sbox:s3
+|present_cipher|present_encipher:en|cipher_round:c7|sbox_layer:s|sbox:s3
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1790,7 +1790,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r7|sbox_layer:s|sbox:s4
+|present_cipher|present_encipher:en|cipher_round:c7|sbox_layer:s|sbox:s4
 w_in[0] => Decoder0.IN3
 w_in[1] => Decoder0.IN2
 w_in[2] => Decoder0.IN1
@@ -1801,7 +1801,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_encipher:en|cipher_round:r7|pbox:p
+|present_cipher|present_encipher:en|cipher_round:c7|pbox:p
 state_in[0] => state_out[0].DATAIN
 state_in[1] => state_out[4].DATAIN
 state_in[2] => state_out[8].DATAIN
@@ -2448,7 +2448,7 @@ w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_decipher:dec|cipher_round:r1
+|present_cipher|present_decipher:dec|decipher_round:d1
 round_in[0] => r_in.IN0
 round_in[1] => r_in.IN0
 round_in[2] => r_in.IN0
@@ -2481,104 +2481,25 @@ round_key[12] => r_in.IN1
 round_key[13] => r_in.IN1
 round_key[14] => r_in.IN1
 round_key[15] => r_in.IN1
-round_out[0] <= pbox:p.state_out
-round_out[1] <= pbox:p.state_out
-round_out[2] <= pbox:p.state_out
-round_out[3] <= pbox:p.state_out
-round_out[4] <= pbox:p.state_out
-round_out[5] <= pbox:p.state_out
-round_out[6] <= pbox:p.state_out
-round_out[7] <= pbox:p.state_out
-round_out[8] <= pbox:p.state_out
-round_out[9] <= pbox:p.state_out
-round_out[10] <= pbox:p.state_out
-round_out[11] <= pbox:p.state_out
-round_out[12] <= pbox:p.state_out
-round_out[13] <= pbox:p.state_out
-round_out[14] <= pbox:p.state_out
-round_out[15] <= pbox:p.state_out
+round_out[0] <= sbox_layer_inv:s.state_out
+round_out[1] <= sbox_layer_inv:s.state_out
+round_out[2] <= sbox_layer_inv:s.state_out
+round_out[3] <= sbox_layer_inv:s.state_out
+round_out[4] <= sbox_layer_inv:s.state_out
+round_out[5] <= sbox_layer_inv:s.state_out
+round_out[6] <= sbox_layer_inv:s.state_out
+round_out[7] <= sbox_layer_inv:s.state_out
+round_out[8] <= sbox_layer_inv:s.state_out
+round_out[9] <= sbox_layer_inv:s.state_out
+round_out[10] <= sbox_layer_inv:s.state_out
+round_out[11] <= sbox_layer_inv:s.state_out
+round_out[12] <= sbox_layer_inv:s.state_out
+round_out[13] <= sbox_layer_inv:s.state_out
+round_out[14] <= sbox_layer_inv:s.state_out
+round_out[15] <= sbox_layer_inv:s.state_out
 
 
-|present_cipher|present_decipher:dec|cipher_round:r1|sbox_layer:s
-state_in[0] => w0[0].IN1
-state_in[1] => w0[1].IN1
-state_in[2] => w0[2].IN1
-state_in[3] => w0[3].IN1
-state_in[4] => w1[0].IN1
-state_in[5] => w1[1].IN1
-state_in[6] => w1[2].IN1
-state_in[7] => w1[3].IN1
-state_in[8] => w2[0].IN1
-state_in[9] => w2[1].IN1
-state_in[10] => w2[2].IN1
-state_in[11] => w2[3].IN1
-state_in[12] => w3[0].IN1
-state_in[13] => w3[1].IN1
-state_in[14] => w3[2].IN1
-state_in[15] => w3[3].IN1
-state_out[0] <= sbox:s1.w_out
-state_out[1] <= sbox:s1.w_out
-state_out[2] <= sbox:s1.w_out
-state_out[3] <= sbox:s1.w_out
-state_out[4] <= sbox:s2.w_out
-state_out[5] <= sbox:s2.w_out
-state_out[6] <= sbox:s2.w_out
-state_out[7] <= sbox:s2.w_out
-state_out[8] <= sbox:s3.w_out
-state_out[9] <= sbox:s3.w_out
-state_out[10] <= sbox:s3.w_out
-state_out[11] <= sbox:s3.w_out
-state_out[12] <= sbox:s4.w_out
-state_out[13] <= sbox:s4.w_out
-state_out[14] <= sbox:s4.w_out
-state_out[15] <= sbox:s4.w_out
-
-
-|present_cipher|present_decipher:dec|cipher_round:r1|sbox_layer:s|sbox:s1
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r1|sbox_layer:s|sbox:s2
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r1|sbox_layer:s|sbox:s3
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r1|sbox_layer:s|sbox:s4
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r1|pbox:p
+|present_cipher|present_decipher:dec|decipher_round:d1|pbox:p
 state_in[0] => state_out[0].DATAIN
 state_in[1] => state_out[4].DATAIN
 state_in[2] => state_out[8].DATAIN
@@ -2613,7 +2534,86 @@ state_out[14] <= state_in[11].DB_MAX_OUTPUT_PORT_TYPE
 state_out[15] <= state_in[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_decipher:dec|cipher_round:r2
+|present_cipher|present_decipher:dec|decipher_round:d1|sbox_layer_inv:s
+state_in[0] => w0[0].IN1
+state_in[1] => w0[1].IN1
+state_in[2] => w0[2].IN1
+state_in[3] => w0[3].IN1
+state_in[4] => w1[0].IN1
+state_in[5] => w1[1].IN1
+state_in[6] => w1[2].IN1
+state_in[7] => w1[3].IN1
+state_in[8] => w2[0].IN1
+state_in[9] => w2[1].IN1
+state_in[10] => w2[2].IN1
+state_in[11] => w2[3].IN1
+state_in[12] => w3[0].IN1
+state_in[13] => w3[1].IN1
+state_in[14] => w3[2].IN1
+state_in[15] => w3[3].IN1
+state_out[0] <= sbox_inv:s1.w_out
+state_out[1] <= sbox_inv:s1.w_out
+state_out[2] <= sbox_inv:s1.w_out
+state_out[3] <= sbox_inv:s1.w_out
+state_out[4] <= sbox_inv:s2.w_out
+state_out[5] <= sbox_inv:s2.w_out
+state_out[6] <= sbox_inv:s2.w_out
+state_out[7] <= sbox_inv:s2.w_out
+state_out[8] <= sbox_inv:s3.w_out
+state_out[9] <= sbox_inv:s3.w_out
+state_out[10] <= sbox_inv:s3.w_out
+state_out[11] <= sbox_inv:s3.w_out
+state_out[12] <= sbox_inv:s4.w_out
+state_out[13] <= sbox_inv:s4.w_out
+state_out[14] <= sbox_inv:s4.w_out
+state_out[15] <= sbox_inv:s4.w_out
+
+
+|present_cipher|present_decipher:dec|decipher_round:d1|sbox_layer_inv:s|sbox_inv:s1
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d1|sbox_layer_inv:s|sbox_inv:s2
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d1|sbox_layer_inv:s|sbox_inv:s3
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d1|sbox_layer_inv:s|sbox_inv:s4
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d2
 round_in[0] => r_in.IN0
 round_in[1] => r_in.IN0
 round_in[2] => r_in.IN0
@@ -2646,104 +2646,25 @@ round_key[12] => r_in.IN1
 round_key[13] => r_in.IN1
 round_key[14] => r_in.IN1
 round_key[15] => r_in.IN1
-round_out[0] <= pbox:p.state_out
-round_out[1] <= pbox:p.state_out
-round_out[2] <= pbox:p.state_out
-round_out[3] <= pbox:p.state_out
-round_out[4] <= pbox:p.state_out
-round_out[5] <= pbox:p.state_out
-round_out[6] <= pbox:p.state_out
-round_out[7] <= pbox:p.state_out
-round_out[8] <= pbox:p.state_out
-round_out[9] <= pbox:p.state_out
-round_out[10] <= pbox:p.state_out
-round_out[11] <= pbox:p.state_out
-round_out[12] <= pbox:p.state_out
-round_out[13] <= pbox:p.state_out
-round_out[14] <= pbox:p.state_out
-round_out[15] <= pbox:p.state_out
+round_out[0] <= sbox_layer_inv:s.state_out
+round_out[1] <= sbox_layer_inv:s.state_out
+round_out[2] <= sbox_layer_inv:s.state_out
+round_out[3] <= sbox_layer_inv:s.state_out
+round_out[4] <= sbox_layer_inv:s.state_out
+round_out[5] <= sbox_layer_inv:s.state_out
+round_out[6] <= sbox_layer_inv:s.state_out
+round_out[7] <= sbox_layer_inv:s.state_out
+round_out[8] <= sbox_layer_inv:s.state_out
+round_out[9] <= sbox_layer_inv:s.state_out
+round_out[10] <= sbox_layer_inv:s.state_out
+round_out[11] <= sbox_layer_inv:s.state_out
+round_out[12] <= sbox_layer_inv:s.state_out
+round_out[13] <= sbox_layer_inv:s.state_out
+round_out[14] <= sbox_layer_inv:s.state_out
+round_out[15] <= sbox_layer_inv:s.state_out
 
 
-|present_cipher|present_decipher:dec|cipher_round:r2|sbox_layer:s
-state_in[0] => w0[0].IN1
-state_in[1] => w0[1].IN1
-state_in[2] => w0[2].IN1
-state_in[3] => w0[3].IN1
-state_in[4] => w1[0].IN1
-state_in[5] => w1[1].IN1
-state_in[6] => w1[2].IN1
-state_in[7] => w1[3].IN1
-state_in[8] => w2[0].IN1
-state_in[9] => w2[1].IN1
-state_in[10] => w2[2].IN1
-state_in[11] => w2[3].IN1
-state_in[12] => w3[0].IN1
-state_in[13] => w3[1].IN1
-state_in[14] => w3[2].IN1
-state_in[15] => w3[3].IN1
-state_out[0] <= sbox:s1.w_out
-state_out[1] <= sbox:s1.w_out
-state_out[2] <= sbox:s1.w_out
-state_out[3] <= sbox:s1.w_out
-state_out[4] <= sbox:s2.w_out
-state_out[5] <= sbox:s2.w_out
-state_out[6] <= sbox:s2.w_out
-state_out[7] <= sbox:s2.w_out
-state_out[8] <= sbox:s3.w_out
-state_out[9] <= sbox:s3.w_out
-state_out[10] <= sbox:s3.w_out
-state_out[11] <= sbox:s3.w_out
-state_out[12] <= sbox:s4.w_out
-state_out[13] <= sbox:s4.w_out
-state_out[14] <= sbox:s4.w_out
-state_out[15] <= sbox:s4.w_out
-
-
-|present_cipher|present_decipher:dec|cipher_round:r2|sbox_layer:s|sbox:s1
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r2|sbox_layer:s|sbox:s2
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r2|sbox_layer:s|sbox:s3
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r2|sbox_layer:s|sbox:s4
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r2|pbox:p
+|present_cipher|present_decipher:dec|decipher_round:d2|pbox:p
 state_in[0] => state_out[0].DATAIN
 state_in[1] => state_out[4].DATAIN
 state_in[2] => state_out[8].DATAIN
@@ -2778,7 +2699,86 @@ state_out[14] <= state_in[11].DB_MAX_OUTPUT_PORT_TYPE
 state_out[15] <= state_in[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_decipher:dec|cipher_round:r3
+|present_cipher|present_decipher:dec|decipher_round:d2|sbox_layer_inv:s
+state_in[0] => w0[0].IN1
+state_in[1] => w0[1].IN1
+state_in[2] => w0[2].IN1
+state_in[3] => w0[3].IN1
+state_in[4] => w1[0].IN1
+state_in[5] => w1[1].IN1
+state_in[6] => w1[2].IN1
+state_in[7] => w1[3].IN1
+state_in[8] => w2[0].IN1
+state_in[9] => w2[1].IN1
+state_in[10] => w2[2].IN1
+state_in[11] => w2[3].IN1
+state_in[12] => w3[0].IN1
+state_in[13] => w3[1].IN1
+state_in[14] => w3[2].IN1
+state_in[15] => w3[3].IN1
+state_out[0] <= sbox_inv:s1.w_out
+state_out[1] <= sbox_inv:s1.w_out
+state_out[2] <= sbox_inv:s1.w_out
+state_out[3] <= sbox_inv:s1.w_out
+state_out[4] <= sbox_inv:s2.w_out
+state_out[5] <= sbox_inv:s2.w_out
+state_out[6] <= sbox_inv:s2.w_out
+state_out[7] <= sbox_inv:s2.w_out
+state_out[8] <= sbox_inv:s3.w_out
+state_out[9] <= sbox_inv:s3.w_out
+state_out[10] <= sbox_inv:s3.w_out
+state_out[11] <= sbox_inv:s3.w_out
+state_out[12] <= sbox_inv:s4.w_out
+state_out[13] <= sbox_inv:s4.w_out
+state_out[14] <= sbox_inv:s4.w_out
+state_out[15] <= sbox_inv:s4.w_out
+
+
+|present_cipher|present_decipher:dec|decipher_round:d2|sbox_layer_inv:s|sbox_inv:s1
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d2|sbox_layer_inv:s|sbox_inv:s2
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d2|sbox_layer_inv:s|sbox_inv:s3
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d2|sbox_layer_inv:s|sbox_inv:s4
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d3
 round_in[0] => r_in.IN0
 round_in[1] => r_in.IN0
 round_in[2] => r_in.IN0
@@ -2811,104 +2811,25 @@ round_key[12] => r_in.IN1
 round_key[13] => r_in.IN1
 round_key[14] => r_in.IN1
 round_key[15] => r_in.IN1
-round_out[0] <= pbox:p.state_out
-round_out[1] <= pbox:p.state_out
-round_out[2] <= pbox:p.state_out
-round_out[3] <= pbox:p.state_out
-round_out[4] <= pbox:p.state_out
-round_out[5] <= pbox:p.state_out
-round_out[6] <= pbox:p.state_out
-round_out[7] <= pbox:p.state_out
-round_out[8] <= pbox:p.state_out
-round_out[9] <= pbox:p.state_out
-round_out[10] <= pbox:p.state_out
-round_out[11] <= pbox:p.state_out
-round_out[12] <= pbox:p.state_out
-round_out[13] <= pbox:p.state_out
-round_out[14] <= pbox:p.state_out
-round_out[15] <= pbox:p.state_out
+round_out[0] <= sbox_layer_inv:s.state_out
+round_out[1] <= sbox_layer_inv:s.state_out
+round_out[2] <= sbox_layer_inv:s.state_out
+round_out[3] <= sbox_layer_inv:s.state_out
+round_out[4] <= sbox_layer_inv:s.state_out
+round_out[5] <= sbox_layer_inv:s.state_out
+round_out[6] <= sbox_layer_inv:s.state_out
+round_out[7] <= sbox_layer_inv:s.state_out
+round_out[8] <= sbox_layer_inv:s.state_out
+round_out[9] <= sbox_layer_inv:s.state_out
+round_out[10] <= sbox_layer_inv:s.state_out
+round_out[11] <= sbox_layer_inv:s.state_out
+round_out[12] <= sbox_layer_inv:s.state_out
+round_out[13] <= sbox_layer_inv:s.state_out
+round_out[14] <= sbox_layer_inv:s.state_out
+round_out[15] <= sbox_layer_inv:s.state_out
 
 
-|present_cipher|present_decipher:dec|cipher_round:r3|sbox_layer:s
-state_in[0] => w0[0].IN1
-state_in[1] => w0[1].IN1
-state_in[2] => w0[2].IN1
-state_in[3] => w0[3].IN1
-state_in[4] => w1[0].IN1
-state_in[5] => w1[1].IN1
-state_in[6] => w1[2].IN1
-state_in[7] => w1[3].IN1
-state_in[8] => w2[0].IN1
-state_in[9] => w2[1].IN1
-state_in[10] => w2[2].IN1
-state_in[11] => w2[3].IN1
-state_in[12] => w3[0].IN1
-state_in[13] => w3[1].IN1
-state_in[14] => w3[2].IN1
-state_in[15] => w3[3].IN1
-state_out[0] <= sbox:s1.w_out
-state_out[1] <= sbox:s1.w_out
-state_out[2] <= sbox:s1.w_out
-state_out[3] <= sbox:s1.w_out
-state_out[4] <= sbox:s2.w_out
-state_out[5] <= sbox:s2.w_out
-state_out[6] <= sbox:s2.w_out
-state_out[7] <= sbox:s2.w_out
-state_out[8] <= sbox:s3.w_out
-state_out[9] <= sbox:s3.w_out
-state_out[10] <= sbox:s3.w_out
-state_out[11] <= sbox:s3.w_out
-state_out[12] <= sbox:s4.w_out
-state_out[13] <= sbox:s4.w_out
-state_out[14] <= sbox:s4.w_out
-state_out[15] <= sbox:s4.w_out
-
-
-|present_cipher|present_decipher:dec|cipher_round:r3|sbox_layer:s|sbox:s1
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r3|sbox_layer:s|sbox:s2
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r3|sbox_layer:s|sbox:s3
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r3|sbox_layer:s|sbox:s4
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r3|pbox:p
+|present_cipher|present_decipher:dec|decipher_round:d3|pbox:p
 state_in[0] => state_out[0].DATAIN
 state_in[1] => state_out[4].DATAIN
 state_in[2] => state_out[8].DATAIN
@@ -2943,7 +2864,86 @@ state_out[14] <= state_in[11].DB_MAX_OUTPUT_PORT_TYPE
 state_out[15] <= state_in[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_decipher:dec|cipher_round:r4
+|present_cipher|present_decipher:dec|decipher_round:d3|sbox_layer_inv:s
+state_in[0] => w0[0].IN1
+state_in[1] => w0[1].IN1
+state_in[2] => w0[2].IN1
+state_in[3] => w0[3].IN1
+state_in[4] => w1[0].IN1
+state_in[5] => w1[1].IN1
+state_in[6] => w1[2].IN1
+state_in[7] => w1[3].IN1
+state_in[8] => w2[0].IN1
+state_in[9] => w2[1].IN1
+state_in[10] => w2[2].IN1
+state_in[11] => w2[3].IN1
+state_in[12] => w3[0].IN1
+state_in[13] => w3[1].IN1
+state_in[14] => w3[2].IN1
+state_in[15] => w3[3].IN1
+state_out[0] <= sbox_inv:s1.w_out
+state_out[1] <= sbox_inv:s1.w_out
+state_out[2] <= sbox_inv:s1.w_out
+state_out[3] <= sbox_inv:s1.w_out
+state_out[4] <= sbox_inv:s2.w_out
+state_out[5] <= sbox_inv:s2.w_out
+state_out[6] <= sbox_inv:s2.w_out
+state_out[7] <= sbox_inv:s2.w_out
+state_out[8] <= sbox_inv:s3.w_out
+state_out[9] <= sbox_inv:s3.w_out
+state_out[10] <= sbox_inv:s3.w_out
+state_out[11] <= sbox_inv:s3.w_out
+state_out[12] <= sbox_inv:s4.w_out
+state_out[13] <= sbox_inv:s4.w_out
+state_out[14] <= sbox_inv:s4.w_out
+state_out[15] <= sbox_inv:s4.w_out
+
+
+|present_cipher|present_decipher:dec|decipher_round:d3|sbox_layer_inv:s|sbox_inv:s1
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d3|sbox_layer_inv:s|sbox_inv:s2
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d3|sbox_layer_inv:s|sbox_inv:s3
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d3|sbox_layer_inv:s|sbox_inv:s4
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d4
 round_in[0] => r_in.IN0
 round_in[1] => r_in.IN0
 round_in[2] => r_in.IN0
@@ -2976,104 +2976,25 @@ round_key[12] => r_in.IN1
 round_key[13] => r_in.IN1
 round_key[14] => r_in.IN1
 round_key[15] => r_in.IN1
-round_out[0] <= pbox:p.state_out
-round_out[1] <= pbox:p.state_out
-round_out[2] <= pbox:p.state_out
-round_out[3] <= pbox:p.state_out
-round_out[4] <= pbox:p.state_out
-round_out[5] <= pbox:p.state_out
-round_out[6] <= pbox:p.state_out
-round_out[7] <= pbox:p.state_out
-round_out[8] <= pbox:p.state_out
-round_out[9] <= pbox:p.state_out
-round_out[10] <= pbox:p.state_out
-round_out[11] <= pbox:p.state_out
-round_out[12] <= pbox:p.state_out
-round_out[13] <= pbox:p.state_out
-round_out[14] <= pbox:p.state_out
-round_out[15] <= pbox:p.state_out
+round_out[0] <= sbox_layer_inv:s.state_out
+round_out[1] <= sbox_layer_inv:s.state_out
+round_out[2] <= sbox_layer_inv:s.state_out
+round_out[3] <= sbox_layer_inv:s.state_out
+round_out[4] <= sbox_layer_inv:s.state_out
+round_out[5] <= sbox_layer_inv:s.state_out
+round_out[6] <= sbox_layer_inv:s.state_out
+round_out[7] <= sbox_layer_inv:s.state_out
+round_out[8] <= sbox_layer_inv:s.state_out
+round_out[9] <= sbox_layer_inv:s.state_out
+round_out[10] <= sbox_layer_inv:s.state_out
+round_out[11] <= sbox_layer_inv:s.state_out
+round_out[12] <= sbox_layer_inv:s.state_out
+round_out[13] <= sbox_layer_inv:s.state_out
+round_out[14] <= sbox_layer_inv:s.state_out
+round_out[15] <= sbox_layer_inv:s.state_out
 
 
-|present_cipher|present_decipher:dec|cipher_round:r4|sbox_layer:s
-state_in[0] => w0[0].IN1
-state_in[1] => w0[1].IN1
-state_in[2] => w0[2].IN1
-state_in[3] => w0[3].IN1
-state_in[4] => w1[0].IN1
-state_in[5] => w1[1].IN1
-state_in[6] => w1[2].IN1
-state_in[7] => w1[3].IN1
-state_in[8] => w2[0].IN1
-state_in[9] => w2[1].IN1
-state_in[10] => w2[2].IN1
-state_in[11] => w2[3].IN1
-state_in[12] => w3[0].IN1
-state_in[13] => w3[1].IN1
-state_in[14] => w3[2].IN1
-state_in[15] => w3[3].IN1
-state_out[0] <= sbox:s1.w_out
-state_out[1] <= sbox:s1.w_out
-state_out[2] <= sbox:s1.w_out
-state_out[3] <= sbox:s1.w_out
-state_out[4] <= sbox:s2.w_out
-state_out[5] <= sbox:s2.w_out
-state_out[6] <= sbox:s2.w_out
-state_out[7] <= sbox:s2.w_out
-state_out[8] <= sbox:s3.w_out
-state_out[9] <= sbox:s3.w_out
-state_out[10] <= sbox:s3.w_out
-state_out[11] <= sbox:s3.w_out
-state_out[12] <= sbox:s4.w_out
-state_out[13] <= sbox:s4.w_out
-state_out[14] <= sbox:s4.w_out
-state_out[15] <= sbox:s4.w_out
-
-
-|present_cipher|present_decipher:dec|cipher_round:r4|sbox_layer:s|sbox:s1
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r4|sbox_layer:s|sbox:s2
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r4|sbox_layer:s|sbox:s3
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r4|sbox_layer:s|sbox:s4
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r4|pbox:p
+|present_cipher|present_decipher:dec|decipher_round:d4|pbox:p
 state_in[0] => state_out[0].DATAIN
 state_in[1] => state_out[4].DATAIN
 state_in[2] => state_out[8].DATAIN
@@ -3108,7 +3029,86 @@ state_out[14] <= state_in[11].DB_MAX_OUTPUT_PORT_TYPE
 state_out[15] <= state_in[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_decipher:dec|cipher_round:r5
+|present_cipher|present_decipher:dec|decipher_round:d4|sbox_layer_inv:s
+state_in[0] => w0[0].IN1
+state_in[1] => w0[1].IN1
+state_in[2] => w0[2].IN1
+state_in[3] => w0[3].IN1
+state_in[4] => w1[0].IN1
+state_in[5] => w1[1].IN1
+state_in[6] => w1[2].IN1
+state_in[7] => w1[3].IN1
+state_in[8] => w2[0].IN1
+state_in[9] => w2[1].IN1
+state_in[10] => w2[2].IN1
+state_in[11] => w2[3].IN1
+state_in[12] => w3[0].IN1
+state_in[13] => w3[1].IN1
+state_in[14] => w3[2].IN1
+state_in[15] => w3[3].IN1
+state_out[0] <= sbox_inv:s1.w_out
+state_out[1] <= sbox_inv:s1.w_out
+state_out[2] <= sbox_inv:s1.w_out
+state_out[3] <= sbox_inv:s1.w_out
+state_out[4] <= sbox_inv:s2.w_out
+state_out[5] <= sbox_inv:s2.w_out
+state_out[6] <= sbox_inv:s2.w_out
+state_out[7] <= sbox_inv:s2.w_out
+state_out[8] <= sbox_inv:s3.w_out
+state_out[9] <= sbox_inv:s3.w_out
+state_out[10] <= sbox_inv:s3.w_out
+state_out[11] <= sbox_inv:s3.w_out
+state_out[12] <= sbox_inv:s4.w_out
+state_out[13] <= sbox_inv:s4.w_out
+state_out[14] <= sbox_inv:s4.w_out
+state_out[15] <= sbox_inv:s4.w_out
+
+
+|present_cipher|present_decipher:dec|decipher_round:d4|sbox_layer_inv:s|sbox_inv:s1
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d4|sbox_layer_inv:s|sbox_inv:s2
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d4|sbox_layer_inv:s|sbox_inv:s3
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d4|sbox_layer_inv:s|sbox_inv:s4
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d5
 round_in[0] => r_in.IN0
 round_in[1] => r_in.IN0
 round_in[2] => r_in.IN0
@@ -3141,104 +3141,25 @@ round_key[12] => r_in.IN1
 round_key[13] => r_in.IN1
 round_key[14] => r_in.IN1
 round_key[15] => r_in.IN1
-round_out[0] <= pbox:p.state_out
-round_out[1] <= pbox:p.state_out
-round_out[2] <= pbox:p.state_out
-round_out[3] <= pbox:p.state_out
-round_out[4] <= pbox:p.state_out
-round_out[5] <= pbox:p.state_out
-round_out[6] <= pbox:p.state_out
-round_out[7] <= pbox:p.state_out
-round_out[8] <= pbox:p.state_out
-round_out[9] <= pbox:p.state_out
-round_out[10] <= pbox:p.state_out
-round_out[11] <= pbox:p.state_out
-round_out[12] <= pbox:p.state_out
-round_out[13] <= pbox:p.state_out
-round_out[14] <= pbox:p.state_out
-round_out[15] <= pbox:p.state_out
+round_out[0] <= sbox_layer_inv:s.state_out
+round_out[1] <= sbox_layer_inv:s.state_out
+round_out[2] <= sbox_layer_inv:s.state_out
+round_out[3] <= sbox_layer_inv:s.state_out
+round_out[4] <= sbox_layer_inv:s.state_out
+round_out[5] <= sbox_layer_inv:s.state_out
+round_out[6] <= sbox_layer_inv:s.state_out
+round_out[7] <= sbox_layer_inv:s.state_out
+round_out[8] <= sbox_layer_inv:s.state_out
+round_out[9] <= sbox_layer_inv:s.state_out
+round_out[10] <= sbox_layer_inv:s.state_out
+round_out[11] <= sbox_layer_inv:s.state_out
+round_out[12] <= sbox_layer_inv:s.state_out
+round_out[13] <= sbox_layer_inv:s.state_out
+round_out[14] <= sbox_layer_inv:s.state_out
+round_out[15] <= sbox_layer_inv:s.state_out
 
 
-|present_cipher|present_decipher:dec|cipher_round:r5|sbox_layer:s
-state_in[0] => w0[0].IN1
-state_in[1] => w0[1].IN1
-state_in[2] => w0[2].IN1
-state_in[3] => w0[3].IN1
-state_in[4] => w1[0].IN1
-state_in[5] => w1[1].IN1
-state_in[6] => w1[2].IN1
-state_in[7] => w1[3].IN1
-state_in[8] => w2[0].IN1
-state_in[9] => w2[1].IN1
-state_in[10] => w2[2].IN1
-state_in[11] => w2[3].IN1
-state_in[12] => w3[0].IN1
-state_in[13] => w3[1].IN1
-state_in[14] => w3[2].IN1
-state_in[15] => w3[3].IN1
-state_out[0] <= sbox:s1.w_out
-state_out[1] <= sbox:s1.w_out
-state_out[2] <= sbox:s1.w_out
-state_out[3] <= sbox:s1.w_out
-state_out[4] <= sbox:s2.w_out
-state_out[5] <= sbox:s2.w_out
-state_out[6] <= sbox:s2.w_out
-state_out[7] <= sbox:s2.w_out
-state_out[8] <= sbox:s3.w_out
-state_out[9] <= sbox:s3.w_out
-state_out[10] <= sbox:s3.w_out
-state_out[11] <= sbox:s3.w_out
-state_out[12] <= sbox:s4.w_out
-state_out[13] <= sbox:s4.w_out
-state_out[14] <= sbox:s4.w_out
-state_out[15] <= sbox:s4.w_out
-
-
-|present_cipher|present_decipher:dec|cipher_round:r5|sbox_layer:s|sbox:s1
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r5|sbox_layer:s|sbox:s2
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r5|sbox_layer:s|sbox:s3
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r5|sbox_layer:s|sbox:s4
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r5|pbox:p
+|present_cipher|present_decipher:dec|decipher_round:d5|pbox:p
 state_in[0] => state_out[0].DATAIN
 state_in[1] => state_out[4].DATAIN
 state_in[2] => state_out[8].DATAIN
@@ -3273,7 +3194,86 @@ state_out[14] <= state_in[11].DB_MAX_OUTPUT_PORT_TYPE
 state_out[15] <= state_in[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_decipher:dec|cipher_round:r6
+|present_cipher|present_decipher:dec|decipher_round:d5|sbox_layer_inv:s
+state_in[0] => w0[0].IN1
+state_in[1] => w0[1].IN1
+state_in[2] => w0[2].IN1
+state_in[3] => w0[3].IN1
+state_in[4] => w1[0].IN1
+state_in[5] => w1[1].IN1
+state_in[6] => w1[2].IN1
+state_in[7] => w1[3].IN1
+state_in[8] => w2[0].IN1
+state_in[9] => w2[1].IN1
+state_in[10] => w2[2].IN1
+state_in[11] => w2[3].IN1
+state_in[12] => w3[0].IN1
+state_in[13] => w3[1].IN1
+state_in[14] => w3[2].IN1
+state_in[15] => w3[3].IN1
+state_out[0] <= sbox_inv:s1.w_out
+state_out[1] <= sbox_inv:s1.w_out
+state_out[2] <= sbox_inv:s1.w_out
+state_out[3] <= sbox_inv:s1.w_out
+state_out[4] <= sbox_inv:s2.w_out
+state_out[5] <= sbox_inv:s2.w_out
+state_out[6] <= sbox_inv:s2.w_out
+state_out[7] <= sbox_inv:s2.w_out
+state_out[8] <= sbox_inv:s3.w_out
+state_out[9] <= sbox_inv:s3.w_out
+state_out[10] <= sbox_inv:s3.w_out
+state_out[11] <= sbox_inv:s3.w_out
+state_out[12] <= sbox_inv:s4.w_out
+state_out[13] <= sbox_inv:s4.w_out
+state_out[14] <= sbox_inv:s4.w_out
+state_out[15] <= sbox_inv:s4.w_out
+
+
+|present_cipher|present_decipher:dec|decipher_round:d5|sbox_layer_inv:s|sbox_inv:s1
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d5|sbox_layer_inv:s|sbox_inv:s2
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d5|sbox_layer_inv:s|sbox_inv:s3
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d5|sbox_layer_inv:s|sbox_inv:s4
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d6
 round_in[0] => r_in.IN0
 round_in[1] => r_in.IN0
 round_in[2] => r_in.IN0
@@ -3306,104 +3306,25 @@ round_key[12] => r_in.IN1
 round_key[13] => r_in.IN1
 round_key[14] => r_in.IN1
 round_key[15] => r_in.IN1
-round_out[0] <= pbox:p.state_out
-round_out[1] <= pbox:p.state_out
-round_out[2] <= pbox:p.state_out
-round_out[3] <= pbox:p.state_out
-round_out[4] <= pbox:p.state_out
-round_out[5] <= pbox:p.state_out
-round_out[6] <= pbox:p.state_out
-round_out[7] <= pbox:p.state_out
-round_out[8] <= pbox:p.state_out
-round_out[9] <= pbox:p.state_out
-round_out[10] <= pbox:p.state_out
-round_out[11] <= pbox:p.state_out
-round_out[12] <= pbox:p.state_out
-round_out[13] <= pbox:p.state_out
-round_out[14] <= pbox:p.state_out
-round_out[15] <= pbox:p.state_out
+round_out[0] <= sbox_layer_inv:s.state_out
+round_out[1] <= sbox_layer_inv:s.state_out
+round_out[2] <= sbox_layer_inv:s.state_out
+round_out[3] <= sbox_layer_inv:s.state_out
+round_out[4] <= sbox_layer_inv:s.state_out
+round_out[5] <= sbox_layer_inv:s.state_out
+round_out[6] <= sbox_layer_inv:s.state_out
+round_out[7] <= sbox_layer_inv:s.state_out
+round_out[8] <= sbox_layer_inv:s.state_out
+round_out[9] <= sbox_layer_inv:s.state_out
+round_out[10] <= sbox_layer_inv:s.state_out
+round_out[11] <= sbox_layer_inv:s.state_out
+round_out[12] <= sbox_layer_inv:s.state_out
+round_out[13] <= sbox_layer_inv:s.state_out
+round_out[14] <= sbox_layer_inv:s.state_out
+round_out[15] <= sbox_layer_inv:s.state_out
 
 
-|present_cipher|present_decipher:dec|cipher_round:r6|sbox_layer:s
-state_in[0] => w0[0].IN1
-state_in[1] => w0[1].IN1
-state_in[2] => w0[2].IN1
-state_in[3] => w0[3].IN1
-state_in[4] => w1[0].IN1
-state_in[5] => w1[1].IN1
-state_in[6] => w1[2].IN1
-state_in[7] => w1[3].IN1
-state_in[8] => w2[0].IN1
-state_in[9] => w2[1].IN1
-state_in[10] => w2[2].IN1
-state_in[11] => w2[3].IN1
-state_in[12] => w3[0].IN1
-state_in[13] => w3[1].IN1
-state_in[14] => w3[2].IN1
-state_in[15] => w3[3].IN1
-state_out[0] <= sbox:s1.w_out
-state_out[1] <= sbox:s1.w_out
-state_out[2] <= sbox:s1.w_out
-state_out[3] <= sbox:s1.w_out
-state_out[4] <= sbox:s2.w_out
-state_out[5] <= sbox:s2.w_out
-state_out[6] <= sbox:s2.w_out
-state_out[7] <= sbox:s2.w_out
-state_out[8] <= sbox:s3.w_out
-state_out[9] <= sbox:s3.w_out
-state_out[10] <= sbox:s3.w_out
-state_out[11] <= sbox:s3.w_out
-state_out[12] <= sbox:s4.w_out
-state_out[13] <= sbox:s4.w_out
-state_out[14] <= sbox:s4.w_out
-state_out[15] <= sbox:s4.w_out
-
-
-|present_cipher|present_decipher:dec|cipher_round:r6|sbox_layer:s|sbox:s1
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r6|sbox_layer:s|sbox:s2
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r6|sbox_layer:s|sbox:s3
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r6|sbox_layer:s|sbox:s4
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r6|pbox:p
+|present_cipher|present_decipher:dec|decipher_round:d6|pbox:p
 state_in[0] => state_out[0].DATAIN
 state_in[1] => state_out[4].DATAIN
 state_in[2] => state_out[8].DATAIN
@@ -3438,7 +3359,86 @@ state_out[14] <= state_in[11].DB_MAX_OUTPUT_PORT_TYPE
 state_out[15] <= state_in[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|present_cipher|present_decipher:dec|cipher_round:r7
+|present_cipher|present_decipher:dec|decipher_round:d6|sbox_layer_inv:s
+state_in[0] => w0[0].IN1
+state_in[1] => w0[1].IN1
+state_in[2] => w0[2].IN1
+state_in[3] => w0[3].IN1
+state_in[4] => w1[0].IN1
+state_in[5] => w1[1].IN1
+state_in[6] => w1[2].IN1
+state_in[7] => w1[3].IN1
+state_in[8] => w2[0].IN1
+state_in[9] => w2[1].IN1
+state_in[10] => w2[2].IN1
+state_in[11] => w2[3].IN1
+state_in[12] => w3[0].IN1
+state_in[13] => w3[1].IN1
+state_in[14] => w3[2].IN1
+state_in[15] => w3[3].IN1
+state_out[0] <= sbox_inv:s1.w_out
+state_out[1] <= sbox_inv:s1.w_out
+state_out[2] <= sbox_inv:s1.w_out
+state_out[3] <= sbox_inv:s1.w_out
+state_out[4] <= sbox_inv:s2.w_out
+state_out[5] <= sbox_inv:s2.w_out
+state_out[6] <= sbox_inv:s2.w_out
+state_out[7] <= sbox_inv:s2.w_out
+state_out[8] <= sbox_inv:s3.w_out
+state_out[9] <= sbox_inv:s3.w_out
+state_out[10] <= sbox_inv:s3.w_out
+state_out[11] <= sbox_inv:s3.w_out
+state_out[12] <= sbox_inv:s4.w_out
+state_out[13] <= sbox_inv:s4.w_out
+state_out[14] <= sbox_inv:s4.w_out
+state_out[15] <= sbox_inv:s4.w_out
+
+
+|present_cipher|present_decipher:dec|decipher_round:d6|sbox_layer_inv:s|sbox_inv:s1
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d6|sbox_layer_inv:s|sbox_inv:s2
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d6|sbox_layer_inv:s|sbox_inv:s3
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d6|sbox_layer_inv:s|sbox_inv:s4
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d7
 round_in[0] => r_in.IN0
 round_in[1] => r_in.IN0
 round_in[2] => r_in.IN0
@@ -3471,104 +3471,25 @@ round_key[12] => r_in.IN1
 round_key[13] => r_in.IN1
 round_key[14] => r_in.IN1
 round_key[15] => r_in.IN1
-round_out[0] <= pbox:p.state_out
-round_out[1] <= pbox:p.state_out
-round_out[2] <= pbox:p.state_out
-round_out[3] <= pbox:p.state_out
-round_out[4] <= pbox:p.state_out
-round_out[5] <= pbox:p.state_out
-round_out[6] <= pbox:p.state_out
-round_out[7] <= pbox:p.state_out
-round_out[8] <= pbox:p.state_out
-round_out[9] <= pbox:p.state_out
-round_out[10] <= pbox:p.state_out
-round_out[11] <= pbox:p.state_out
-round_out[12] <= pbox:p.state_out
-round_out[13] <= pbox:p.state_out
-round_out[14] <= pbox:p.state_out
-round_out[15] <= pbox:p.state_out
+round_out[0] <= sbox_layer_inv:s.state_out
+round_out[1] <= sbox_layer_inv:s.state_out
+round_out[2] <= sbox_layer_inv:s.state_out
+round_out[3] <= sbox_layer_inv:s.state_out
+round_out[4] <= sbox_layer_inv:s.state_out
+round_out[5] <= sbox_layer_inv:s.state_out
+round_out[6] <= sbox_layer_inv:s.state_out
+round_out[7] <= sbox_layer_inv:s.state_out
+round_out[8] <= sbox_layer_inv:s.state_out
+round_out[9] <= sbox_layer_inv:s.state_out
+round_out[10] <= sbox_layer_inv:s.state_out
+round_out[11] <= sbox_layer_inv:s.state_out
+round_out[12] <= sbox_layer_inv:s.state_out
+round_out[13] <= sbox_layer_inv:s.state_out
+round_out[14] <= sbox_layer_inv:s.state_out
+round_out[15] <= sbox_layer_inv:s.state_out
 
 
-|present_cipher|present_decipher:dec|cipher_round:r7|sbox_layer:s
-state_in[0] => w0[0].IN1
-state_in[1] => w0[1].IN1
-state_in[2] => w0[2].IN1
-state_in[3] => w0[3].IN1
-state_in[4] => w1[0].IN1
-state_in[5] => w1[1].IN1
-state_in[6] => w1[2].IN1
-state_in[7] => w1[3].IN1
-state_in[8] => w2[0].IN1
-state_in[9] => w2[1].IN1
-state_in[10] => w2[2].IN1
-state_in[11] => w2[3].IN1
-state_in[12] => w3[0].IN1
-state_in[13] => w3[1].IN1
-state_in[14] => w3[2].IN1
-state_in[15] => w3[3].IN1
-state_out[0] <= sbox:s1.w_out
-state_out[1] <= sbox:s1.w_out
-state_out[2] <= sbox:s1.w_out
-state_out[3] <= sbox:s1.w_out
-state_out[4] <= sbox:s2.w_out
-state_out[5] <= sbox:s2.w_out
-state_out[6] <= sbox:s2.w_out
-state_out[7] <= sbox:s2.w_out
-state_out[8] <= sbox:s3.w_out
-state_out[9] <= sbox:s3.w_out
-state_out[10] <= sbox:s3.w_out
-state_out[11] <= sbox:s3.w_out
-state_out[12] <= sbox:s4.w_out
-state_out[13] <= sbox:s4.w_out
-state_out[14] <= sbox:s4.w_out
-state_out[15] <= sbox:s4.w_out
-
-
-|present_cipher|present_decipher:dec|cipher_round:r7|sbox_layer:s|sbox:s1
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r7|sbox_layer:s|sbox:s2
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r7|sbox_layer:s|sbox:s3
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r7|sbox_layer:s|sbox:s4
-w_in[0] => Decoder0.IN3
-w_in[1] => Decoder0.IN2
-w_in[2] => Decoder0.IN1
-w_in[3] => Decoder0.IN0
-w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|present_cipher|present_decipher:dec|cipher_round:r7|pbox:p
+|present_cipher|present_decipher:dec|decipher_round:d7|pbox:p
 state_in[0] => state_out[0].DATAIN
 state_in[1] => state_out[4].DATAIN
 state_in[2] => state_out[8].DATAIN
@@ -3601,5 +3522,84 @@ state_out[12] <= state_in[3].DB_MAX_OUTPUT_PORT_TYPE
 state_out[13] <= state_in[7].DB_MAX_OUTPUT_PORT_TYPE
 state_out[14] <= state_in[11].DB_MAX_OUTPUT_PORT_TYPE
 state_out[15] <= state_in[15].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d7|sbox_layer_inv:s
+state_in[0] => w0[0].IN1
+state_in[1] => w0[1].IN1
+state_in[2] => w0[2].IN1
+state_in[3] => w0[3].IN1
+state_in[4] => w1[0].IN1
+state_in[5] => w1[1].IN1
+state_in[6] => w1[2].IN1
+state_in[7] => w1[3].IN1
+state_in[8] => w2[0].IN1
+state_in[9] => w2[1].IN1
+state_in[10] => w2[2].IN1
+state_in[11] => w2[3].IN1
+state_in[12] => w3[0].IN1
+state_in[13] => w3[1].IN1
+state_in[14] => w3[2].IN1
+state_in[15] => w3[3].IN1
+state_out[0] <= sbox_inv:s1.w_out
+state_out[1] <= sbox_inv:s1.w_out
+state_out[2] <= sbox_inv:s1.w_out
+state_out[3] <= sbox_inv:s1.w_out
+state_out[4] <= sbox_inv:s2.w_out
+state_out[5] <= sbox_inv:s2.w_out
+state_out[6] <= sbox_inv:s2.w_out
+state_out[7] <= sbox_inv:s2.w_out
+state_out[8] <= sbox_inv:s3.w_out
+state_out[9] <= sbox_inv:s3.w_out
+state_out[10] <= sbox_inv:s3.w_out
+state_out[11] <= sbox_inv:s3.w_out
+state_out[12] <= sbox_inv:s4.w_out
+state_out[13] <= sbox_inv:s4.w_out
+state_out[14] <= sbox_inv:s4.w_out
+state_out[15] <= sbox_inv:s4.w_out
+
+
+|present_cipher|present_decipher:dec|decipher_round:d7|sbox_layer_inv:s|sbox_inv:s1
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d7|sbox_layer_inv:s|sbox_inv:s2
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d7|sbox_layer_inv:s|sbox_inv:s3
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|present_cipher|present_decipher:dec|decipher_round:d7|sbox_layer_inv:s|sbox_inv:s4
+w_in[0] => Decoder0.IN3
+w_in[1] => Decoder0.IN2
+w_in[2] => Decoder0.IN1
+w_in[3] => Decoder0.IN0
+w_out[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+w_out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+w_out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+w_out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 

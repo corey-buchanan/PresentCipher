@@ -5,6 +5,9 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vlog -vlog01compat -work work +incdir+C:/Users/Corey/OneDrive/Desktop/PresentCipher {C:/Users/Corey/OneDrive/Desktop/PresentCipher/decipher_round.v}
+vlog -vlog01compat -work work +incdir+C:/Users/Corey/OneDrive/Desktop/PresentCipher {C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox_layer_inv.v}
+vlog -vlog01compat -work work +incdir+C:/Users/Corey/OneDrive/Desktop/PresentCipher {C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox_inv.v}
 vlog -vlog01compat -work work +incdir+C:/Users/Corey/OneDrive/Desktop/PresentCipher {C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox_layer.v}
 vlog -vlog01compat -work work +incdir+C:/Users/Corey/OneDrive/Desktop/PresentCipher {C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox.v}
 vlog -vlog01compat -work work +incdir+C:/Users/Corey/OneDrive/Desktop/PresentCipher {C:/Users/Corey/OneDrive/Desktop/PresentCipher/pbox.v}

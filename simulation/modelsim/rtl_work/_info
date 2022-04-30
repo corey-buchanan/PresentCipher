@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/Corey/OneDrive/Desktop/PresentCipher/simulation/modelsim
 vcipher_round
-Z1 !s110 1650913912
+Z1 !s110 1651278565
 !i10b 1
 !s100 Blz]dUzOHMbeFeFblbRD;2
 I`<X6]gJ4HSaV:5i6GM5Zn0
@@ -23,13 +23,35 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1650913912.000000
+Z4 !s108 1651278565.000000
 !s107 C:/Users/Corey/OneDrive/Desktop/PresentCipher/cipher_round.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Corey/OneDrive/Desktop/PresentCipher|C:/Users/Corey/OneDrive/Desktop/PresentCipher/cipher_round.v|
 !i113 1
 Z5 o-vlog01compat -work work
 Z6 !s92 -vlog01compat -work work +incdir+C:/Users/Corey/OneDrive/Desktop/PresentCipher
 Z7 tCvgOpt 0
+vdecipher_round
+Z8 !s110 1651278564
+!i10b 1
+!s100 5;W^4XlSX2ET9A2lQH??<1
+I6[IW^M6]lOTAK73NVIZ<Y3
+R2
+R0
+w1651278221
+8C:/Users/Corey/OneDrive/Desktop/PresentCipher/decipher_round.v
+FC:/Users/Corey/OneDrive/Desktop/PresentCipher/decipher_round.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z9 !s108 1651278564.000000
+!s107 C:/Users/Corey/OneDrive/Desktop/PresentCipher/decipher_round.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Corey/OneDrive/Desktop/PresentCipher|C:/Users/Corey/OneDrive/Desktop/PresentCipher/decipher_round.v|
+!i113 1
+R5
+R6
+R7
 vkey_scheduler
 R1
 !i10b 1
@@ -81,7 +103,7 @@ R1
 Ii9i6CB^C>R1bZTQ4iAM>O3
 R2
 R0
-Z8 w1650897859
+Z10 w1650897859
 8C:/Users/Corey/OneDrive/Desktop/PresentCipher/pbox.v
 FC:/Users/Corey/OneDrive/Desktop/PresentCipher/pbox.v
 L0 1
@@ -89,7 +111,7 @@ R3
 r1
 !s85 0
 31
-Z9 !s108 1650913911.000000
+R4
 !s107 C:/Users/Corey/OneDrive/Desktop/PresentCipher/pbox.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Corey/OneDrive/Desktop/PresentCipher|C:/Users/Corey/OneDrive/Desktop/PresentCipher/pbox.v|
 !i113 1
@@ -97,7 +119,7 @@ R5
 R6
 R7
 vpresent_cipher
-R1
+Z11 !s110 1651278566
 !i10b 1
 !s100 X0m?Eo>Y^XUld^JVi@Q@S2
 IcnZbSmIjgBA2SY8^4cLgf3
@@ -111,7 +133,7 @@ R3
 r1
 !s85 0
 31
-R4
+Z12 !s108 1651278566.000000
 !s107 C:/Users/Corey/OneDrive/Desktop/PresentCipher/present_cipher.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Corey/OneDrive/Desktop/PresentCipher|C:/Users/Corey/OneDrive/Desktop/PresentCipher/present_cipher.v|
 !i113 1
@@ -121,11 +143,11 @@ R7
 vpresent_decipher
 R1
 !i10b 1
-!s100 ghY@BRlm=JQiM5V8Gi_Ua3
-IcA1ak>Vl]fR^68C7bURlD0
+!s100 IW3dg^n3YmMU6a0MiTQ_41
+I@EKHPR@Po8S3JglN>]UQ23
 R2
 R0
-w1650913039
+Z13 w1651197037
 8C:/Users/Corey/OneDrive/Desktop/PresentCipher/present_decipher.v
 FC:/Users/Corey/OneDrive/Desktop/PresentCipher/present_decipher.v
 L0 1
@@ -141,13 +163,13 @@ R5
 R6
 R7
 vpresent_encipher
-R1
+R11
 !i10b 1
-!s100 VfD:5[g95nZDac?gcPzC>1
-IO9a;iRN;G7:oZfFNBC0N82
+!s100 GMo?6GmIdMNP`m2oa3kia2
+I>ia>fH=CPO[i0gVa0J;]Q2
 R2
 R0
-w1650912927
+R13
 8C:/Users/Corey/OneDrive/Desktop/PresentCipher/present_encipher.v
 FC:/Users/Corey/OneDrive/Desktop/PresentCipher/present_encipher.v
 L0 1
@@ -163,13 +185,13 @@ R5
 R6
 R7
 vsbox
-Z10 !s110 1650913911
+R1
 !i10b 1
 !s100 lHjTh`E3eI<P9QbZW@nHY0
 I9Z;T6K_S8@Cj8IGADi2YT1
 R2
 R0
-R8
+R10
 8C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox.v
 FC:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox.v
 L0 1
@@ -177,21 +199,43 @@ R3
 r1
 !s85 0
 31
-R9
+R4
 !s107 C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Corey/OneDrive/Desktop/PresentCipher|C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox.v|
 !i113 1
 R5
 R6
 R7
+vsbox_inv
+R1
+!i10b 1
+!s100 3T2J3jH7KJN9PPWgXLLGG2
+IM:a^7GHzU?9h]7jXFoe8R2
+R2
+R0
+R13
+8C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox_inv.v
+FC:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox_inv.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox_inv.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Corey/OneDrive/Desktop/PresentCipher|C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox_inv.v|
+!i113 1
+R5
+R6
+R7
 vsbox_layer
-R10
+R1
 !i10b 1
 !s100 9iYcQW7;@H1XknS@d_i5X3
 I599f1ZFH:@R2n418;Jgjo3
 R2
 R0
-R8
+R10
 8C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox_layer.v
 FC:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox_layer.v
 L0 1
@@ -199,15 +243,37 @@ R3
 r1
 !s85 0
 31
-R9
+R4
 !s107 C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox_layer.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Corey/OneDrive/Desktop/PresentCipher|C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox_layer.v|
 !i113 1
 R5
 R6
 R7
+vsbox_layer_inv
+R8
+!i10b 1
+!s100 I=47PC0HHTm>6n1TV8^3=2
+IoE=m03aI5b@4QP;VjWdm=2
+R2
+R0
+R13
+8C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox_layer_inv.v
+FC:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox_layer_inv.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox_layer_inv.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Corey/OneDrive/Desktop/PresentCipher|C:/Users/Corey/OneDrive/Desktop/PresentCipher/sbox_layer_inv.v|
+!i113 1
+R5
+R6
+R7
 vtb_cipher
-R1
+R11
 !i10b 1
 !s100 32i>Dc8X0fZaA4U=eBFnP2
 I8U7KCROZC[0MKHDTKh:0I0
@@ -221,7 +287,7 @@ R3
 r1
 !s85 0
 31
-R4
+R12
 !s107 C:/Users/Corey/OneDrive/Desktop/PresentCipher/tb_cipher.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Corey/OneDrive/Desktop/PresentCipher|C:/Users/Corey/OneDrive/Desktop/PresentCipher/tb_cipher.v|
 !i113 1
