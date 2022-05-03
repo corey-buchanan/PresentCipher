@@ -18,17 +18,21 @@ key = 20'h48FA2;
 
 #1;
 
-plaintext = 128'h44444544444444444444444444444444;
+plaintext = 128'h44444444444444444444444445444444;
 
 #1;
 
-init_vec = 16'h32A9;
+init_vec = 16'h48EA;
+
+#1;
+
+key = 20'h49FA2;
 
 #1;
 
 plaintext = 128'hBADDCAFEBADDF00DD15EA5EDDEADBEEF;
 init_vec = 16'hAB84;
-key = 20'hB00B5;
+key = 20'h1D1CE;
 
 #1;
 
